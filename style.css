@@ -6,11 +6,11 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    height: 1000vh;
-    padding: 70px 0px;
+    padding: 70px 0px 0px 0px;
 } 
 
 header {
@@ -22,7 +22,7 @@ header {
 }
 
 .container-navbar {
-    background-color: #1c9e22;
+    background-color: #42d449;
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.6);
     padding: 0 20px 0 20px;
 }
@@ -35,6 +35,11 @@ header {
 }
 
 .navbar-wrap .logo {
+    color: white;
+}
+
+.navbar-wrap .logo a {
+    text-decoration: none;
     color: white;
 }
 
@@ -67,9 +72,80 @@ header {
     color: #9becb6;
 }
 
+@media screen and (max-width: 768px) {
+    .navbar-wrap .logo {
+        display: none;
+    }
+
+    .navbar-wrap {
+        justify-content: center;
+    }
+}
+
+#home {
+    background: linear-gradient(0deg, rgb(130, 255, 105), rgb(214, 255, 206));
+    min-height: 100vh;  
+}
+
+#home .teks {
+    text-align: center;
+    padding: 125px 0 0 0;
+}
+
+#home .teks h1 {
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    color: #349c39;
+    font-size: 70px;
+    font-weight: 900;
+    margin-bottom: 0;
+}
+
+#home .teks h1:hover {
+    color: #42d449;
+    transform: translateY(-2px);
+}
+
+#home .teks p {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #474747;
+    font-weight: 500;
+}
+
+.container-btn {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #1be625;
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #e85a20;
+}
+
+@media screen and (max-width: 768px) {
+    #home .teks p {
+        font-size: 12px;
+    }
+}
+
 .hero {
-    background: rgb(167, 255, 149);
-    height: 1000px;
+    background: rgb(130, 255, 105);
+    min-height: 100vh;
+    padding: 60px 0px 0px 0px;
 }
 
 .judul {
@@ -78,7 +154,7 @@ header {
 }
 
 .judul h1 {
-    color: #54cc5a;
+    color: #46af4b;
     font-size: 50px;
     font-weight: 800;
     margin-bottom: 0;
@@ -93,6 +169,7 @@ header {
 .judul p {
     color: #ffffff;
     margin: 0;
+    font-weight: 500;
 }
 
 .card-container {
@@ -109,13 +186,33 @@ header {
     padding: 25px;
     color: white;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 1s ease, box-shadow 0.3s ease;
     height: 560px;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+.card.left {
+    transform: translateX(-80px);
+}
+
+.card.right {
+    transform: translateX(80px);
+}
+
+.card.left:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(11, 172, 65, 0.5);
+    color: rgb(255, 255, 255);
+}
+
+.card.right:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(11, 172, 65, 0.5);
+    color: rgb(255, 255, 255);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .card img {
@@ -146,4 +243,113 @@ header {
     background-color: #349c39;
     padding: 10px 12px;
     border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 25px;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .card img {
+        width: 270px;
+    }
+
+    .card {
+        background: linear-gradient(180deg, #6ccf8e, #4caf50);
+        border-radius: 18px;
+        padding: 25px;
+        color: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 1s ease, box-shadow 0.3s ease;
+        height: auto;
+    }
+}
+
+#profil {
+    background: linear-gradient(0deg, rgb(77, 155, 63), rgb(130, 255, 105));
+    padding: 120px 0px 0px 0px;
+    min-height: 90vh;
+}
+
+#profil .lol {
+    text-align: center;
+}
+
+#profil .lol h1 {
+    font-size: 60px;
+    font-weight: 800;
+    color: #208a25;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+#profil .lol h1:hover {
+    color: #36b83c;
+    transform: translateY(-2px);
+}
+
+#profil .lol p {
+    margin: 0;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+#profil .iden {
+    margin-top: 70px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: #ffffff;
+}
+
+#profil .iden .inti {
+    background: linear-gradient(0deg, rgb(62, 126, 51), rgb(116, 255, 89));
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    #profil .iden {
+        margin-top: 70px;
+        padding-left: 70px;
+        padding-right: 70px;
+        color: #ffffff;
+    }
+
+    #profil .iden .inti {
+        background: linear-gradient(0deg, rgb(62, 126, 51), rgb(116, 255, 89));
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+    #profil {
+        height: 500px;
+    }
+
+    .inti h1 {
+        font-size: 24px;
+    }
+
+    .inti h2 {
+        font-size: 20px;
+    }
+}
+
+footer {
+    margin: 0;
+    background-color: #42d449;
+    box-shadow: 0 -12px 16px rgba(27, 85, 5, 0.6);
+}
+
+.end {
+    padding: 16px;
+}
+
+.end h2 {
+    text-align: center;
+    font-size: 18px;
+    color: white;
 }
