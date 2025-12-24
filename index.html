@@ -11,38 +11,89 @@
         <div class="container-navbar">
             <div class="navbar-wrap">
                 <div class="logo">
-                <h2>Artikel<small>.news</small></h2>
+                <a href="#">
+                    <h2>Artikel<small>.news</small></h2>
+                </a>
             </div>
             <nav class="navbar">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#artikel">Artikel</a></li>
+                    <li><a href="#profil">About Me</a></li>
                 </ul>
             </nav>
             </div>
         </div>
     </header>
 
-    <section class="hero" id="about">
+    <section id="home">
+        <div class="teks">
+            <h1>Artikel<small>.news</small></h1>
+            <p>Ini adalah website LandingPages buatan saya, yang bertemakan<br>sebuah webiste artikel</p>
+        </div>
+        <div class="container-btn">
+            <a href="#artikel" class="btn">
+                LIHAT SELENGKAPNYA 
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="hero" id="artikel">
         <div class="judul">
             <h1>Pilih Artikel</h1>
             <p>Ini adalah beberapa artikel yang kami sajikan</p>
         </div>
         <div class="card-container">
-            <div class="card">
+            <div class="card left">
                 <img src="gambar1.jpeg" alt="">
                 <h3>Bahlil Tetapkan Alokasi Biodiesel Tahun Depan 15,6 Juta Kiloliter.</h3>
                 <p>Menteri Energi dan Sumber Daya Mineral (ESDM) Bahlil Lahadalia resmi menetapkan alokasi volume Bahan Bakar Nabati (BBN) jenis biodiesel untuk tahun 2026 sebesar 15.646.372 kiloliter (kl).</p>
                 <a href="https://finance.detik.com/energi/d-8274953/bahlil-tetapkan-alokasi-biodiesel-tahun-depan-15-6-juta-kiloliter">Baca selengkapnya</a>
             </div>
 
-            <div class="card">
+            <div class="card right">
                 <img src="gambar2.jpeg" alt="">
                 <h3>Purbaya Terima 10 Aduan Terkait Hambatan Usaha, Ini Masalahnya.</h3>
                 <p>Menteri Keuangan Purbaya Yudhi Sadewa menerima 10 aduan terkait permasalahan hambatan usaha alias debottlenecking melalui kanal pengaduan https://lapor.satgasp2sp.go.id/. Layanan ini dibuka sejak 16 Desember 2025.</p>
                 <a href="https://finance.detik.com/berita-ekonomi-bisnis/d-8274120/purbaya-terima-10-aduan-terkait-hambatan-usaha-ini-masalahnya">Baca selengkapnya</a>
             </div>
     </section>
+
+    <section id="profil">
+        <div class="lol">
+            <h1>Tentang Aku</h1>
+            <p>Ini adalah identitas saya</p>
+        </div>
+        <div class="iden">
+            <div class="inti">
+                <h1>Nama saya: Natasya Mareta Lisya</h1>
+                <h2>Absen: 23</h2>
+                <h2>Kelas: X RPL 2</h2>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="end">
+            <h2>&copy; Natasya Mareta Lisya</h2>
+        </div>
+    </footer>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        window.addEventListener('scroll', () => {
+            const triggerPoint = window.innerHeight * 0.85;
+
+            cards.forEach(card => {
+            const cardTop = card.getBoundingClientRect().top;
+
+            if (cardTop < triggerPoint) {
+                card.classList.add('show');
+            }
+            });
+        });
+    </script>
 </body>
 </html>
